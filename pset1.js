@@ -107,6 +107,22 @@ console.log('----------------------------------------------');
     @example - reverseArr([1,2,3,4]); // [4,3,2,1]
 */
 
+const reverseArr = ( arr=[] )=> {
+    const deepCopy = [...arr];
+    for(let i = 0; i < arr.length; i++){
+        deepCopy[i] = arr[arr.length-1-i];
+    }
+    return deepCopy;
+}
+//test
+console.log('---------------5. reverseArr test---------------');
+console.log(reverseArr(), []);
+console.log(reverseArr(['hola','mi','amore']), ['amore','mi','hola']);
+console.log(reverseArr([1,2,3,4]), [4,3,2,1]);
+console.log(reverseArr(['dime',10,5]), [5,10,'dime']);
+console.log(reverseArr('playing around')); // interesting scenario; get back to it if have time
+console.log('----------------------------------------------');
+
 /*
     @func negateBackwards
     @param {array} arr
