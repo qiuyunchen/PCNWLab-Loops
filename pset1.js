@@ -6,6 +6,22 @@
             find average of all numbers
     @example - average([1,2,3,4]); // 2.5
 */
+const average = (arr = []) => {
+    const deepArr = arr.slice(0);
+    let sum = 0;
+    for (let i = 0; i < deepArr.length; i++) {
+        sum += deepArr[i];
+    }
+    return sum/deepArr.length;
+}
+//test
+console.log('---------------average test---------------');
+console.log(average(), NaN);
+console.log(average(['hola','mi','amore']), NaN);
+console.log(average([1,2,3,4]), 10/4);
+console.log(average([1,4,3,2]), 10/4);
+console.log(average([10,0,10,0,20]), 8);
+console.log('---------------------------');
 
 /*
     @func squareEach
