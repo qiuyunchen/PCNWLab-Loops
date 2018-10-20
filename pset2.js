@@ -59,6 +59,21 @@ console.log('-------------------------------------------------------');
         removeOdds([1,"2",3,4]); // [4]
 */
 
+const removeOdds = arr =>{
+    const newArr = [];
+    for(let i =0; i < arr.length; i++){
+        if(typeof arr[i] === 'number' && arr[i]%2 === 0){
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr;
+}
+//test
+console.log('----------------3. removeOdds test----------------');
+console.log(removeOdds([1,2,3,4]), [2,4]);
+console.log(removeOdds([1,"2",3,4]), [4]);
+console.log('-------------------------------------------------------');
+
 /*
     @func addSquares
     @param {array} arr
