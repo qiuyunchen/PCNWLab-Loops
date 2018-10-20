@@ -102,7 +102,19 @@ console.log('-------------------------------------------------------');
     @example - doubleify([1,2,3,4); // [1,1,2,2,3,3,4,4]
 */
 
-
+const doubleify = arr =>{
+    let newArr = [];
+    for(let i =0; i < arr.length; i++){
+        newArr.push(arr[i]);
+        newArr.push(arr[i]);
+    }
+    return newArr;
+}
+//test
+console.log('----------------5. doubleify test----------------');
+console.log(doubleify([1,2,3,4]), [1,1,2,2,3,3,4,4]);
+console.log(doubleify([0,3,4]), [0,0,3,3,4,4]);
+console.log('-------------------------------------------------------');
 /*
     @func findMax
     @param {array}
