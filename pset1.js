@@ -66,7 +66,7 @@ const averageSquare = ( arr = [] ) => {
     return average(squareEach(deepcopy));
 }
 //test
-console.log('---------------averageSquare test---------------');
+console.log('---------------3. averageSquare test---------------');
 console.log(averageSquare(), NaN);
 console.log(averageSquare(['hola','mi','amore']), NaN);
 console.log(averageSquare([1,2,3,4]), 30/4);
@@ -82,6 +82,22 @@ console.log('----------------------------------------------');
     @example
         negateArr([1,2,3,4]); // [-1,-2,-3,-4]
 */
+
+const negateArr = ( arr = [] ) => {
+    const deepCopy = arr.slice(0);
+    for(let i = 0; i < deepCopy.length; i++){
+        deepCopy[i] = deepCopy[i] * -1;
+    }
+    return deepCopy;
+}
+//test
+console.log('---------------4. negateArr test---------------');
+console.log(negateArr(), []);
+console.log(negateArr(['hola','mi','amore']), [NaN,NaN,NaN]);
+console.log(negateArr([1,2,3,4]), [-1,-2,-3,-4]);
+console.log(negateArr(['dime',10,5]), [NaN,-10,-5]);
+console.log(negateArr('playing around'), 'playing around'); //Why???
+console.log('----------------------------------------------');
 
 /*
     @func reverseArr
