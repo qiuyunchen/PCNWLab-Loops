@@ -32,6 +32,20 @@ console.log('-------------------------------------------------------');
         findVal([1,2,3,4], 4); // 3
         findVal([1,2,3,4], 9); // -1
 */
+const findVal = (arr, val) =>{
+    for(let i = 0; i < arr.length; i++){
+        if(arr[i] === val){
+            return i;
+        }
+    }
+    return -1;
+}
+//test
+console.log('----------------2. findVal test----------------');
+console.log(findVal([1,2,3,4], 1), 0);
+console.log(findVal([1,2,3,4], 4), 3);
+console.log(findVal([1,2,3,4], 9), -1);
+console.log('-------------------------------------------------------');
 
 /*
     @func removeOdds
