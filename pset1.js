@@ -61,6 +61,19 @@ console.log('----------------------------------------------');
         averageSquare([1,2,3,4); // 7.5
 */
 
+const averageSquare = ( arr = [] ) => {
+    const deepcopy = [...arr];
+    return average(squareEach(deepcopy));
+}
+//test
+console.log('---------------averageSquare test---------------');
+console.log(averageSquare(), NaN);
+console.log(averageSquare(['hola','mi','amore']), NaN);
+console.log(averageSquare([1,2,3,4]), 30/4);
+console.log(averageSquare(['dime',10,5]), NaN);
+console.log(averageSquare('playing around'), NaN);
+console.log('----------------------------------------------');
+
 /*
     @func negateArr
     @param {array} arr
