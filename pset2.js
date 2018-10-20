@@ -82,7 +82,18 @@ console.log('-------------------------------------------------------');
     @example - 
         addSquares([1,2,3,4); // [1,2,3,4,1,4,9,16]
 */
-
+const addSquares = arr =>{
+    let newArr = [...arr];
+    for(let i =0; i < arr.length; i++){
+        newArr.push( arr[i] **2 );
+    }
+    return newArr;
+}
+//test
+console.log('----------------4. addSquares test----------------');
+console.log(addSquares([1,2,3,4]), [1,2,3,4,1,4,9,16]);
+console.log(addSquares([0,3,4]), [0,3,4,0,9,16]);
+console.log('-------------------------------------------------------');
 /*
     @func doubleify
     @param {array} arr
