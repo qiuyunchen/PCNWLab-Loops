@@ -132,5 +132,17 @@ console.log('----------------------------------------------');
         negateBackwards([1,2,3,4]); // [-4, -3, -2, -1]
 */
 
+const negateBackwards = (arr = []) => {
+    const deepCopy = [...arr];
+    return negateArr(reverseArr(deepCopy));
+}
+//test
+console.log('---------------6. negateBackwards test---------------');
+console.log(negateBackwards(), []);
+console.log(negateBackwards(['hola','mi','amore']), [NaN, NaN, NaN]);
+console.log(negateBackwards([1,2,3,4]), [-4,-3,-2,-1]);
+console.log(negateBackwards(['dime',10,5]), [-5,-10,NaN]);
+console.log(negateBackwards('playing around')); //interesting scenario
+console.log('----------------------------------------------');
 
 
