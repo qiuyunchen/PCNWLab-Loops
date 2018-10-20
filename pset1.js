@@ -31,6 +31,22 @@ console.log('---------------------------');
     @example - squareEach([1,2,3,4]); // [1,4,9,16]
 */
 
+const squareEach = (arr = [] ) => {
+    const deepCopy = [...arr];
+    for(let i = 0; i < arr.length; i++){
+        deepCopy[i] = deepCopy[i] ** 2
+    }
+    return deepCopy;
+}
+//test
+console.log('---------------squareEach test---------------');
+console.log(squareEach(), []);
+console.log(squareEach(['hola','mi','amore']), NaN);
+console.log(squareEach([1,2,3,4]), [1,4,9,16]);
+console.log(squareEach(['dime',10,5]), [NaN,100,25]);
+console.log(squareEach('playing around'), NaN, "interesting - get back to it"); //interesting scenario; why?!
+console.log('----------------------------------------------');
+
 /*
     @func averageSquare
     @param {array} arr
