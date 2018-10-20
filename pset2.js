@@ -122,3 +122,17 @@ console.log('-------------------------------------------------------');
     @desc - find largest number in array
     @example - findMax([1,2,3,99,4]); // 99 
 */
+const findMax = arr =>{
+    let largestNum = arr[0];
+    for(let i =0; i < arr.length; i++){
+        if(arr[i] > largestNum){
+            largestNum = arr[i];
+        }
+    }
+    return largestNum;
+}
+//test
+console.log('----------------6. findMax test----------------');
+console.log(findMax([1,2,3,99,4]), 99);
+console.log(findMax([-50,3,4,100]), 100);
+console.log('-------------------------------------------------------');
