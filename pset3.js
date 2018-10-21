@@ -5,7 +5,7 @@
     @desc - get the middle item of an array
             if even number of elements, return the middle TWO items
             
-    @example - getMiddle([1,2,3); // [3]
+    @example - getMiddle([1,2,3); // [2]
                getMiddle([1,2,3,4]); // [2,3]
 */
 
@@ -36,6 +36,18 @@ console.log('-------------------------------------------------------');
     @example - addToMiddle([1,2,3], 0); // [1,2,0,3];
                addToMiddle([1,2,3,4], 0); // [1,2,0,3,4]
 */
+
+const addToMiddle = (arr, element) =>{
+    const midIndex = Math.ceil(arr.length/2);
+    const half1 = arr.slice(0, midIndex);
+    const half2 = arr.slice(midIndex);
+    return half1.concat(element).concat(half2);
+}
+//test
+console.log('-------------------2. addToMiddle test-------------------');
+console.log(addToMiddle([1,2,3], 0), [1,2,0,3]);
+console.log(addToMiddle([1,2,3,4], 0), [1,2,0,3,4]);
+console.log('---------------------------------------------------------');
 
 /*
     @func hasAtSymbol
