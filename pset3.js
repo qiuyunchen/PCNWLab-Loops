@@ -58,6 +58,18 @@ console.log('---------------------------------------------------------');
                hasAtSymbol('foobar'); // false
 */
 
+const hasAtSymbol = email =>{
+    for(let i =0; i < email.length; i++){
+        if (email[i] === '@') return true;
+    }
+    return false;
+}
+//test
+console.log('------------------- 3. hasAtSymbol test -------------------');
+console.log(hasAtSymbol('taq@karim.com'), true);
+console.log(hasAtSymbol('foobar'), false);
+console.log('---------------------------------------------------------');
+
 /*
     @func capitalize
     @param {string} str
