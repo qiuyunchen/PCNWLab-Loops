@@ -100,6 +100,14 @@ console.log('---------------------------------------------------------');
     @example isAllUpperCased('TAQ'); // true
              isAllUpperCased('tAq'); // false
 */
+const isAllUpperCased = str => (str === str.toUpperCase());
+//test
+console.log('------------------- 5. isAllUpperCased test -------------------');
+console.log(isAllUpperCased('TAQ'), true);
+console.log(isAllUpperCased('tAq'), false);
+console.log(isAllUpperCased('El Mundo'), false);
+console.log(isAllUpperCased('SUSHI'), true);
+console.log('---------------------------------------------------------');
 
 /*
     @func capitalizeEachWord
