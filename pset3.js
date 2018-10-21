@@ -79,6 +79,17 @@ console.log('---------------------------------------------------------');
     @example - capitalize('taq'); // 'Taq'
                capitalize('Taq'); // 'Taq'
 */
+const capitalize = str =>{
+    const letter1 = str[0].toUpperCase();
+    return letter1 + str.slice(1); 
+}
+//test
+console.log('------------------- 4. capitalize test -------------------');
+console.log(capitalize('taq'), 'Taq');
+console.log(capitalize('Taq'), 'Taq');
+console.log(capitalize('tech'), 'Tech');
+console.log(capitalize('weird!'), 'Weird!');
+console.log('---------------------------------------------------------');
 
 /*
     @func isAllUpperCased
