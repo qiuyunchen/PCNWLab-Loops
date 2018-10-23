@@ -149,7 +149,31 @@ console.log('---------------------------------------------------------');
                )
                // 'The Cow and a Fox Went on the Trip'
 */
+const capitalizeEachWordWithExceptions = ( str, exceptions =[] ) =>{
+    if (typeof str !== 'string') return 'need string input!';
+    const lowerCaseArr = str.split(' ');
+    //compare lowerCaseArr to exception list
+    const upperCaseArr = lowerCaseArr.map(
+        (each) => {
+            if (exceptions.indexOf(each) === -1) return capitalize(each);
+            return each;
+        }
+    );
 
+    let newStr = '';
+    upperCaseArr.forEach( each => newStr += each+' ' );
+    return newStr.slice(0,newStr.length-1);
+}
+//test
+console.log('------------------- 7. capitalizeEachWordWithExceptions test -------------------');
+console.log(capitalizeEachWordWithExceptions(), 'need string input!');
+console.log(capitalizeEachWordWithExceptions(1000), 'need string input!');
+console.log(capitalizeEachWordWithExceptions('hello'), 'Hello');
+console.log(capitalizeEachWordWithExceptions('el Mundo','el'), 'el Mundo');
+console.log(capitalizeEachWordWithExceptions('the cow and a fox went on the trip',
+                                            ['the', 'and', 'a', 'on']) ===
+'the Cow and a Fox Went on the Trip', 'the Cow and a Fox Went on the Trip');
+console.log('---------------------------------------------------------');
 /*
     @func findAtMentions
     @param {string} tweet
