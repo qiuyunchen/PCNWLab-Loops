@@ -184,6 +184,25 @@ console.log('---------------------------------------------------------');
         findAtMentions('@the_taqquikarim @someOtherGuy @etc this was a cool event @foobar')
         // ['the_taqquikarim', 'someOtherGuy', 'etc', 'foobar']
 */
+const findAtMentions = tweet =>{
+    if (typeof tweet !== 'string') return 'Not a string!';
+    const wordArr = tweet.split(' ');
+    const filteredArr = wordArr.filter( e =>{
+        if (e[0] === '@') return e;
+    });
+    return filteredArr.map( e => e.slice(1) );
+}
+
+//test
+console.log('------------------- 8. findAtMentions test -------------------');
+
+console.log(findAtMentions(), 'Not a string!');
+console.log(findAtMentions(1000), 'Not a string!');
+console.log(findAtMentions('hello'), []);
+console.log(findAtMentions('@the_taqquikarim @someOtherGuy @etc this was a cool event @foobar'),
+['the_taqquikarim', 'someOtherGuy', 'etc', 'foobar']);
+
+console.log('---------------------------------------------------------');
 
 /*
     @func roundToN
