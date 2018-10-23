@@ -119,6 +119,23 @@ console.log('---------------------------------------------------------');
                // 'The Cow Jumped Over The Fence'
 */
 
+const capitalizeEachWord = str =>{
+    if (typeof str !== 'string') return 'need string input!';
+    const arr = str.split(' ');
+    const newArr = arr.map( each => capitalize(each) );
+    let newStr = '';
+    newArr.forEach( each => newStr += each+' ' );
+    return newStr;
+}
+//test
+console.log('------------------- 6. capitalizeEachWord test -------------------');
+console.log(capitalizeEachWord(), 'need string input!');
+console.log(capitalizeEachWord(1000), 'need string input!');
+console.log(capitalizeEachWord('hello'), 'Hello');
+console.log(capitalizeEachWord('El Mundo'), 'El Mundo');
+console.log(capitalizeEachWord('the cow jumped over the fence'), 'The Cow Jumped Over The Fence');
+console.log('---------------------------------------------------------');
+
 /*
     @func capitalizeEachWordWithExceptions
     @param {string} str
