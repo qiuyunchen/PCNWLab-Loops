@@ -213,6 +213,29 @@ console.log('---------------------------------------------------------');
     @desc - rounds to the decimalPlaces
     @example - roundToN(1123.1234, 3); // 1123.123
 */
+const roundToN = (num, decimalPlaces = 0) =>{
+    if (typeof num !== 'number') return 'Not a number!';
+    if (decimalPlaces === 0) return Math.round(num);
+    const numStr = num.toString();
+    const integerPlaces = numStr.indexOf('.');
+    const index = integerPlaces + decimalPlaces;
+    const roundingFactor = parseInt(numStr[index+1], 10);
+    let roundedDecimal = parseInt(numStr[index], 10);
+    if (roundingFactor > 4){
+        roundedDecimal = parseInt(numStr[index], 10) + 1;
+    }
+    return parseFloat(numStr.slice(0,index)+roundedDecimal);
+}
+
+//test
+console.log('------------------- 9. roundToN test -------------------');
+console.log(roundToN('blah'), 'Not a number!');
+console.log(roundToN(1000.56), 1001);
+console.log(roundToN(1123.1234, 1) === 1123.1, 1123.1);
+console.log(roundToN(1123.1234, 3) === 1123.123, 1123.123);
+console.log(roundToN(1123.1239, 3) === 1123.124, 1123.124);
+console.log(roundToN(1123.1239, 4) === 1123.1239, 1123.1239);
+console.log('---------------------------------------------------------');
 
 /*
     @func addArrays
