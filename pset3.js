@@ -250,4 +250,23 @@ console.log('---------------------------------------------------------');
     ]); // [1,2,3,4,5,6,7,8,9]
 */
 
-
+const addArrays = arrays =>{
+    if (!Array.isArray(arrays)) return 'This is not an array!';
+    const newArr = [];
+    arrays.forEach( arr =>{
+        if (!Array.isArray(arr)){ newArr.push(arr) 
+        } else {
+            arr.forEach( e => newArr.push(e) );
+        };
+    });
+    return newArr;
+}
+console.log('------------------- 10. addArrays test -------------------');
+console.log(addArrays(), 'This is not an array!');
+console.log(addArrays('blah'), 'This is not an array!');
+console.log(addArrays(1000), 'This is not an array!');
+console.log(addArrays([1, 11]), [1, 11]);
+console.log(addArrays( [1,2],[3,4] ), [1,2]);
+console.log(addArrays([ [1,2,3],[4,5],[6,7,8,9] ]), [1,2,3,4,5,6,7,8,9]);
+console.log(addArrays([[1,2,3],['a','b','c'],[4,5,6],['what?']]), [1,2,3,'a','b','c',4,5,6,'what?']);
+console.log('---------------------------------------------------------');
